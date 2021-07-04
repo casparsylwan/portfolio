@@ -15,9 +15,8 @@ const routes: Routes = [
   {path:'about-pdf', component: AboutMePdfComponent},
   {path:'contact', component: ContactComponent},
   {path:'offer', component: OfferComponent},
-  {path:'', redirectTo: 'home', pathMatch: 'full'}
-  // ,
-  // {path:'**', redirectTo: 'home', pathMatch:'prefix'}
+  {path:'', redirectTo: 'home', pathMatch: 'full'},
+  {path:'**', redirectTo: 'home', pathMatch:'prefix'}
 ];
 
 @NgModule({
