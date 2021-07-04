@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+// import jsPDF from 'jspdf';
+// import html2canvas from 'html2canvas';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class AboutMePdfComponent implements OnInit, AfterViewInit {
 
   constructor(private router:Router) { }
   ngAfterViewInit(): void {
-      this.htmlToPdf()
+      // this.htmlToPdf()
   }
 
   ngOnInit(): void {
@@ -154,29 +154,29 @@ return this.workExperience
 }
 
 
-  htmlToPdf() 
-  {
-    let DATA = document.getElementById('about-pdf');
+  // htmlToPdf() 
+  // {
+  //   let DATA = document.getElementById('about-pdf');
   
-    html2canvas(DATA).then(canvas => {
+  //   html2canvas(DATA).then(canvas => {
     
-      let fileWidth = 210;
-      let pageHeight = 295;
-      let fileHeight = canvas.height * fileWidth / canvas.width;
-      console.log(canvas.height)
-      console.log(fileHeight)
-      const FILEURI = canvas.toDataURL('image/png')
-      let PDF = new jsPDF('p', 'mm', 'a4');
-      let position = 0;
-      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+  //     let fileWidth = 210;
+  //     let pageHeight = 295;
+  //     let fileHeight = canvas.height * fileWidth / canvas.width;
+  //     console.log(canvas.height)
+  //     console.log(fileHeight)
+  //     const FILEURI = canvas.toDataURL('image/png')
+  //     let PDF = new jsPDF('p', 'mm', 'a4');
+  //     let position = 0;
+  //     PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
       // position = - 295 ;
       // console.log("POS", position);
       // PDF.addPage();
       // PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
-      PDF.save('caspar-sylwan-cv.pdf');
+      // PDF.save('caspar-sylwan-cv.pdf');
       //this.router.navigate(['/about'])
-  }); 
-  }
+  // }); 
+  // }
 
 
 }
